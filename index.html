@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Portfolio | Software & Embedded Systems Engineer</title>
+  <meta name="description" content="Portfolio of an innovative Software and Embedded Systems Engineer specializing in C#, C++, Java, Python, ESP32 IoT solutions, MySQL, and modern web technologies.">
+  <meta name="keywords" content="Software Engineer, Embedded Systems, ESP32, C++, C#, Java, Python, MySQL, Portfolio, Developer">
+  <meta name="author" content="Developer Portfolio">
+  
+  <!-- Open Graph / Meta for Social Previews -->
+  <meta property="og:title" content="Developer Portfolio | Software & Embedded IoT Engineer">
+  <meta property="og:description" content="Explore innovative IoT systems, software applications, and developer projects.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (SVG Monogram) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%237C3AED'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='48' font-weight='bold' fill='white'>&lt;/&gt;</text></svg>">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Global Tooltip Container for Interactive AI Tools -->
+  <div id="custom-tooltip" class="custom-tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <!-- Ambient Background Accents -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Home">
+        <span class="logo-symbol">&lt;</span>
+        <span class="logo-text">Dev<span class="accent-dot">.</span>portfolio</span>
+        <span class="logo-symbol">/&gt;</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#tech-stack" class="nav-link">Skills & Tools</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions: Theme Toggle & Mobile Menu Button -->
+      <div class="header-actions">
+        <!-- Interactive Dark Mode Switch -->
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark/light theme">
+          <span class="theme-icon sun-icon" aria-hidden="true">
+            <!-- Sun SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+          <span class="theme-icon moon-icon" aria-hidden="true">
+            <!-- Moon SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="section-container hero-grid">
+        <div class="hero-content">
+          <!-- Availability Badge -->
+          <div class="badge-pill">
+            <span class="pulsing-dot"></span>
+            <span>Available for new projects & opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm a <span class="gradient-text">Software Engineer</span> & <span class="violet-highlight">IoT Innovator</span>
+          </h1>
+
+          <p class="hero-bio">
+            Bridging hardware, firmware, and scalable software. I design robust embedded solutions with ESP32 microcontrollers and build reliable multi-tier software applications powered by modern languages and structured databases.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Work</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get in Touch</span>
+            </a>
+          </div>
+
+          <!-- Quick Social Links -->
+          <div class="hero-socials">
+            <span class="social-label">Connect:</span>
+            <div class="social-links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+              <a href="mailto:contact@developer.local" class="social-icon-btn" aria-label="Email me">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Modern Developer Code Card (abusaid.netlify.app inspired) -->
+        <div class="hero-visual">
+          <div class="code-terminal-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="terminal-title">developer.config.ts</div>
+              <div class="terminal-badge">Active</div>
+            </div>
+            <div class="terminal-body">
+              <pre><code><span class="token-keyword">const</span> <span class="token-variable">developer</span> = {
+  <span class="token-property">name</span>: <span class="token-string">"Systems & Software Engineer"</span>,
+  <span class="token-property">specialization</span>: [
+    <span class="token-string">"ESP32 & Sensor Architectures"</span>,
+    <span class="token-string">"Full-Stack Software Engineering"</span>,
+    <span class="token-string">"Relational Database Systems (MySQL)"</span>
+  ],
+  <span class="token-property">coreLanguages</span>: [
+    <span class="token-string">"C#"</span>, <span class="token-string">"C++"</span>, <span class="token-string">"Java"</span>, <span class="token-string">"Python"</span>, <span class="token-string">"JS"</span>
+  ],
+  <span class="token-property">aiAccelerated</span>: <span class="token-boolean">true</span>,
+  <span class="token-property">status</span>: <span class="token-string">"Ready to build impactful solutions"</span>,
+  <span class="token-function">craftCode</span>: () =&gt; {
+    <span class="token-keyword">return</span> <span class="token-string">"High-performance & reliable systems"</span>;
+  }
+};</code></pre>
+            </div>
+            <div class="terminal-footer">
+              <span class="status-indicator"></span>
+              <span class="terminal-status-text">ESLint: Passed • TypeScript: v5.4 • Git: clean</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="section about-section" id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">About Me</span>
+          <h2 class="section-title">Engineering With Precision & Passion</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card story-card">
+            <div class="card-icon-bubble">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <h3 class="about-card-title">My Developer Journey</h3>
+            <p class="about-text">
+              My engineering journey began with an innate curiosity about how digital instructions physically interact with hardware. That curiosity evolved into a dedicated career path spanning microcontrollers, systems programming in C++ and C#, object-oriented design in Java, and versatile scripting with Python.
+            </p>
+            <p class="about-text">
+              I specialize in end-to-end IoT solutions—integrating sensors, microcontrollers (like ESP32), and secure MySQL database pipelines—while also building responsive web frontends and reliable desktop utilities.
+            </p>
+          </div>
+
+          <div class="about-stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">8+</div>
+              <div class="stat-label">Core Languages & Tools</div>
+              <p class="stat-desc">From hardware-level C++ to high-level JavaScript & Python.</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Hands-on IoT Prototyping</div>
+              <p class="stat-desc">Sensor calibration, real-time telemetry & database logging.</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">AI+</div>
+              <div class="stat-label">Modern AI Assisted</div>
+              <p class="stat-desc">Accelerating clean architecture with ChatGPT, Gemini & Claude.</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">&infin;</div>
+              <div class="stat-label">Commitment to Quality</div>
+              <p class="stat-desc">Clean code, robust documentation, and reliable systems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack & Tools Section -->
+    <section class="section tech-section" id="tech-stack">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">Technical Competencies</span>
+          <h2 class="section-title">Languages, IDE & AI Ecosystem</h2>
+          <p class="section-subtitle">
+            A comprehensive overview of programming languages, primary development environments, and modern AI acceleration tools.
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <!-- 1. Programming Languages Badges / Cards -->
+        <div class="tech-subsection">
+          <div class="subsection-title-wrap">
+            <h3 class="subsection-title">
+              <span class="subsection-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </span>
+              Programming Languages
+            </h3>
+            <span class="tag-counter">8 Languages Mastered</span>
+          </div>
+
+          <div class="languages-grid">
+            <!-- C# Card -->
+            <div class="lang-card">
+              <div class="lang-icon csharp-color">C#</div>
+              <div class="lang-info">
+                <h4 class="lang-name">C#</h4>
+                <p class="lang-role">.NET Core, Desktop & Backend Apps</p>
+              </div>
+              <span class="lang-tag">Object-Oriented</span>
+            </div>
+
+            <!-- C++ Card -->
+            <div class="lang-card">
+              <div class="lang-icon cpp-color">C++</div>
+              <div class="lang-info">
+                <h4 class="lang-name">C++</h4>
+                <p class="lang-role">Embedded Firmware & High Performance</p>
+              </div>
+              <span class="lang-tag">Systems & IoT</span>
+            </div>
+
+            <!-- Java Card -->
+            <div class="lang-card">
+              <div class="lang-icon java-color">Java</div>
+              <div class="lang-info">
+                <h4 class="lang-name">Java</h4>
+                <p class="lang-role">Enterprise OOP & Cross-Platform</p>
+              </div>
+              <span class="lang-tag">Robust & Portable</span>
+            </div>
+
+            <!-- JavaScript Card -->
+            <div class="lang-card">
+              <div class="lang-icon js-color">JS</div>
+              <div class="lang-info">
+                <h4 class="lang-name">JavaScript</h4>
+                <p class="lang-role">ES6+, Asynchronous Web & Full-Stack</p>
+              </div>
+              <span class="lang-tag">Interactive Web</span>
+            </div>
+
+            <!-- HTML5 Card -->
+            <div class="lang-card">
+              <div class="lang-icon html-color">HTML</div>
+              <div class="lang-info">
+                <h4 class="lang-name">HTML5</h4>
+                <p class="lang-role">Semantic Markup, Accessibility & SEO</p>
+              </div>
+              <span class="lang-tag">Web Standards</span>
+            </div>
+
+            <!-- CSS3 Card -->
+            <div class="lang-card">
+              <div class="lang-icon css-color">CSS</div>
+              <div class="lang-info">
+                <h4 class="lang-name">CSS3</h4>
+                <p class="lang-role">Custom Variables, Flexbox, Grid & Animation</p>
+              </div>
+              <span class="lang-tag">Responsive Styling</span>
+            </div>
+
+            <!-- MySQL Card -->
+            <div class="lang-card">
+              <div class="lang-icon mysql-color">SQL</div>
+              <div class="lang-info">
+                <h4 class="lang-name">MySQL</h4>
+                <p class="lang-role">Relational Schemas, Indexing & Data Logging</p>
+              </div>
+              <span class="lang-tag">Relational Database</span>
+            </div>
+
+            <!-- Python Card -->
+            <div class="lang-card">
+              <div class="lang-icon python-color">Py</div>
+              <div class="lang-info">
+                <h4 class="lang-name">Python</h4>
+                <p class="lang-role">Automation, Scripting & Data Pipelines</p>
+              </div>
+              <span class="lang-tag">Scripting & Data</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Primary IDE Spotlight: Visual Studio Code -->
+        <div class="tech-subsection">
+          <div class="subsection-title-wrap">
+            <h3 class="subsection-title">
+              <span class="subsection-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </span>
+              Primary IDE Showcase
+            </h3>
+            <span class="tag-counter">Daily Driver</span>
+          </div>
+
+          <div class="ide-feature-card">
+            <div class="ide-brand-header">
+              <div class="ide-logo-wrap">
+                <!-- Visual Studio Code Official SVG Logo -->
+                <svg class="ide-svg-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Visual Studio Code Logo">
+                  <path d="M72.9 5.8a6.3 6.3 0 0 0-6.1 1.6L28.1 40.5l-16-12.2a3.8 3.8 0 0 0-4.6.2L1.8 33a3.8 3.8 0 0 0-.1 5.4l15 13.6-15 13.6a3.8 3.8 0 0 0 .1 5.4l5.7 4.5a3.8 3.8 0 0 0 4.6.2l16-12.2 38.7 33.1a6.3 6.3 0 0 0 6.1 1.6 6.3 6.3 0 0 0 4.4-4.8l10-80a6.3 6.3 0 0 0-4.4-7.4zM70.5 76.8L38.4 50l32.1-26.8z" fill="#007ACC"/>
+                </svg>
+              </div>
+              <div class="ide-title-meta">
+                <div class="ide-badge">Primary Development Environment</div>
+                <h4 class="ide-name">Visual Studio Code</h4>
+                <p class="ide-summary">Engineered for lightweight versatility, unified terminal control, and deep multi-language toolchains.</p>
+              </div>
+            </div>
+
+            <div class="ide-capabilities-grid">
+              <div class="ide-cap-item">
+                <span class="cap-bullet"></span>
+                <div>
+                  <strong>Embedded & IoT Toolchain:</strong>
+                  <span>PlatformIO, ESP-IDF, and C/C++ IntelliSense for flashing and debugging ESP32 systems.</span>
+                </div>
+              </div>
+              <div class="ide-cap-item">
+                <span class="cap-bullet"></span>
+                <div>
+                  <strong>Multi-Language Debugging:</strong>
+                  <span>Integrated debug adapters for C#, Java, Python, and modern JavaScript runtimes.</span>
+                </div>
+              </div>
+              <div class="ide-cap-item">
+                <span class="cap-bullet"></span>
+                <div>
+                  <strong>Git & Extension Ecosystem:</strong>
+                  <span>Seamless branch management, merge reviews, and automated linting configurations.</span>
+                </div>
+              </div>
+              <div class="ide-cap-item">
+                <span class="cap-bullet"></span>
+                <div>
+                  <strong>AI Copilot Integration:</strong>
+                  <span>Deep native synergy with AI assistants for real-time refactoring and documentation.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. AI Tools & Software (Interactive Icons with Hover Tooltips) -->
+        <div class="tech-subsection">
+          <div class="subsection-title-wrap">
+            <h3 class="subsection-title">
+              <span class="subsection-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              </span>
+              AI Developer Tools & Assistants
+            </h3>
+            <span class="tag-counter">Hover Icons for Details</span>
+          </div>
+          <p class="ai-intro-note">
+            I integrate modern AI models into my development lifecycle to accelerate algorithm exploration, enhance test coverage, and automate boilerplate code.
+          </p>
+
+          <!-- Interactive AI Tool Grid with dynamic data-tooltips -->
+          <div class="ai-tools-grid">
+            <!-- ChatGPT -->
+            <div class="ai-tool-card interactive-ai-card"
+                 data-tooltip-name="ChatGPT"
+                 data-tooltip-desc="OpenAI Conversational & Architectural Logic Engine"
+                 tabindex="0"
+                 role="button"
+                 aria-label="ChatGPT tool details">
+              <div class="ai-icon-wrapper chatgpt-theme">
+                <!-- ChatGPT / OpenAI Official Spiral SVG -->
+                <svg viewBox="0 0 24 24" class="ai-svg-icon" fill="currentColor">
+                  <path d="M22.28 10.37c-.17-.9-.55-1.74-1.12-2.46-.57-.71-1.31-1.26-2.16-1.59.1-.56.1-1.14 0-1.7-.15-.84-.52-1.63-1.07-2.28-.56-.66-1.27-1.16-2.09-1.47a6.22 6.22 0 0 0-4.8.28 6.33 6.33 0 0 0-2.31 1.76c-.55-.23-1.14-.35-1.74-.35-.85 0-1.68.25-2.4.73s-1.28 1.15-1.63 1.94a6.38 6.38 0 0 0-2.39 3.09 6.29 6.29 0 0 0 .14 4.88c-.1.56-.1 1.14 0 1.7.15.84.52 1.63 1.07 2.28.56.66 1.28 1.16 2.09 1.47.78.29 1.62.39 2.45.29.74.75 1.65 1.3 2.66 1.6 1.01.3 2.09.33 3.12.08.57.24 1.17.36 1.78.36.85 0 1.68-.25 2.4-.73s1.28-1.15 1.63-1.94a6.38 6.38 0 0 0 2.39-3.09c.47-1.52.42-3.16-.14-4.88zm-8.81 10.6c-.72.33-1.51.46-2.3.37-.8-.09-1.55-.42-2.18-.94l.11-.06 3.86-2.23c.24-.14.4-.38.45-.66.05-.28-.02-.56-.18-.78l-3.32-4.6 2.04-1.18 3.51 4.87c.28.39.73.63 1.21.63.31 0 .61-.1.87-.29l2.74-1.58.02.04c-.38.83-.98 1.54-1.74 2.04-.76.5-1.64.79-2.55.85zm-8.23-4.52c-.39-.7-.56-1.5-.49-2.3.07-.8.38-1.57.88-2.21l.07.1 2.22 3.86c.14.24.38.4.66.45.28.05.56-.02.78-.18l4.6-3.32v2.36l-4.87 3.51c-.39.28-.63.73-.63 1.21 0 .31.1.61.29.87l1.58 2.74-.04.02c-.83-.38-1.54-.98-2.04-1.74-.51-.76-.8-1.64-.86-2.55zm-1.84-8.8c.33-.72.85-1.33 1.5-1.77.66-.44 1.43-.68 2.22-.68.12 0 .25 0 .37.02v4.45c0 .28.14.54.37.7.23.16.52.21.79.13l5.51-1.54-1.18-2.04-5.88 1.64c-.47.13-.97.02-1.35-.3-.38-.32-.59-.8-.56-1.3l.08-3.15-.04-.02c-.79.46-1.44 1.12-1.88 1.92-.44.8-.66 1.71-.63 2.63.03.92.31 1.81.8 2.58zm13.1-2.9l-3.86 2.23c-.24.14-.4.38-.45.66-.05.28.02.56.18.78l3.32 4.6-2.04 1.18-3.51-4.87c-.28-.39-.73-.63-1.21-.63-.31 0-.61.1-.87.29l-2.74 1.58-.02-.04c.38-.83.98-1.54 1.74-2.04.76-.5 1.64-.79 2.55-.85.81-.05 1.63.1 2.37.44.74.34 1.38.87 1.86 1.53l.11-.06 3.86-2.23c.24-.14.4-.38.45-.66z"/>
+                </svg>
+              </div>
+              <span class="ai-tool-name">ChatGPT</span>
+              <span class="ai-tool-badge">OpenAI</span>
+            </div>
+
+            <!-- Gemini -->
+            <div class="ai-tool-card interactive-ai-card"
+                 data-tooltip-name="Google Gemini"
+                 data-tooltip-desc="Google Multimodal AI Model for Deep Reasoning & Synthesis"
+                 tabindex="0"
+                 role="button"
+                 aria-label="Google Gemini tool details">
+              <div class="ai-icon-wrapper gemini-theme">
+                <!-- Gemini Official Sparkle Star SVG -->
+                <svg viewBox="0 0 24 24" class="ai-svg-icon" fill="currentColor">
+                  <path d="M11.04 20.32c-.44-2.28-1.33-4.32-2.65-6.08-1.32-1.76-2.98-3.15-4.94-4.13a13.3 13.3 0 0 0 4.94-4.13c1.32-1.76 2.21-3.8 2.65-6.08.44 2.28 1.33 4.32 2.65 6.08 1.32 1.76 2.98 3.15 4.94 4.13-1.96.98-3.62 2.37-4.94 4.13-1.32 1.76-2.21 3.8-2.65 6.08z"/>
+                  <path d="M19.5 22c-.22-1.14-.66-2.16-1.32-3.04-.66-.88-1.49-1.58-2.47-2.07.98-.49 1.81-1.19 2.47-2.07.66-.88 1.1-1.9 1.32-3.04.22 1.14.66 2.16 1.32 3.04.66.88 1.49 1.58 2.47 2.07-.98.49-1.81 1.19-2.47 2.07-.66.88-1.1 1.9-1.32 3.04z" opacity="0.8"/>
+                </svg>
+              </div>
+              <span class="ai-tool-name">Gemini</span>
+              <span class="ai-tool-badge">Google DeepMind</span>
+            </div>
+
+            <!-- GitHub Copilot -->
+            <div class="ai-tool-card interactive-ai-card"
+                 data-tooltip-name="GitHub Copilot"
+                 data-tooltip-desc="AI Pair Programmer for In-Editor Autocomplete & Unit Tests"
+                 tabindex="0"
+                 role="button"
+                 aria-label="GitHub Copilot tool details">
+              <div class="ai-icon-wrapper copilot-theme">
+                <!-- GitHub Copilot Official Icon SVG -->
+                <svg viewBox="0 0 24 24" class="ai-svg-icon" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+              </div>
+              <span class="ai-tool-name">GitHub Copilot</span>
+              <span class="ai-tool-badge">GitHub / OpenAI</span>
+            </div>
+
+            <!-- Claude AI -->
+            <div class="ai-tool-card interactive-ai-card"
+                 data-tooltip-name="Claude AI"
+                 data-tooltip-desc="Anthropic Claude 3.5 Sonnet for Deep Code Analysis & Architecture"
+                 tabindex="0"
+                 role="button"
+                 aria-label="Claude AI tool details">
+              <div class="ai-icon-wrapper claude-theme">
+                <!-- Claude AI Official Starburst SVG -->
+                <svg viewBox="0 0 24 24" class="ai-svg-icon" fill="currentColor">
+                  <path d="M12 2l1.6 6.8L20 8l-5.2 4.4L18 19l-6-3.8L6 19l3.2-6.6L4 8l6.4.8L12 2z"/>
+                </svg>
+              </div>
+              <span class="ai-tool-name">Claude AI</span>
+              <span class="ai-tool-badge">Anthropic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Showcase Section -->
+    <section class="section projects-section" id="projects">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">Portfolio & Case Studies</span>
+          <h2 class="section-title">Featured Projects Showcase</h2>
+          <p class="section-subtitle">
+            Explore IoT hardware architectures, embedded C++ solutions, and software systems built for accuracy and real-world reliability.
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="projects-filter-bar" role="tablist" aria-label="Project Categories">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+          <button class="filter-btn" data-filter="iot" role="tab" aria-selected="false">ESP32 & IoT</button>
+          <button class="filter-btn" data-filter="database" role="tab" aria-selected="false">MySQL & Database</button>
+          <button class="filter-btn" data-filter="upcoming" role="tab" aria-selected="false">Ongoing & Templates</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: MediBox -->
+          <article class="project-card" data-category="iot database">
+            <div class="project-card-header">
+              <div class="project-badge featured-badge">
+                <span class="badge-icon">★</span> Featured IoT System
+              </div>
+              <div class="project-links">
+                <a href="#contact" class="card-action-link" title="Source repository" aria-label="MediBox GitHub repository">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-visual-preview medibox-preview">
+              <div class="schematic-mock">
+                <div class="chip-label">ESP32-WROOM-32</div>
+                <div class="signal-line"></div>
+                <div class="sensor-node">OLED + IR Sensors</div>
+                <div class="signal-line"></div>
+                <div class="db-node">MySQL Server</div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">MediBox: Smart Medication Reminder System</h3>
+              <p class="project-description">
+                An intelligent healthcare IoT system engineered to solve medication non-adherence. Powered by an ESP32 microcontroller, MediBox schedules multiple daily doses, triggers synced audio-visual alerts, verifies pill compartment opening via optical sensors, and asynchronously logs patient adherence records to a central MySQL database.
+              </p>
+
+              <div class="project-highlights">
+                <span class="highlight-item">✓ Real-time RTC clock synchronization</span>
+                <span class="highlight-item">✓ Multi-compartment sensor validation</span>
+                <span class="highlight-item">✓ Automated MySQL database audit trail</span>
+              </div>
+
+              <div class="tech-tags-list">
+                <span class="tech-pill">ESP32</span>
+                <span class="tech-pill">C++ Firmware</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">Sensor Integration</span>
+                <span class="tech-pill">OLED Display</span>
+                <span class="tech-pill">IoT Alarms</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Smart Food Scale -->
+          <article class="project-card" data-category="iot database">
+            <div class="project-card-header">
+              <div class="project-badge scale-badge">
+                <span class="badge-icon">⚖</span> Precision IoT Device
+              </div>
+              <div class="project-links">
+                <a href="#contact" class="card-action-link" title="Source repository" aria-label="Smart Food Scale GitHub repository">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-visual-preview foodscale-preview">
+              <div class="schematic-mock">
+                <div class="chip-label">HX711 24-bit ADC</div>
+                <div class="signal-line"></div>
+                <div class="sensor-node">ESP32 Dual-Core</div>
+                <div class="signal-line"></div>
+                <div class="db-node">Nutrition Logs (MySQL)</div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Smart Food Scale</h3>
+              <p class="project-description">
+                A connected smart scale combining precision load cell sensors and 24-bit analog-to-digital conversion (HX711) with an ESP32 controller. Measures portion weights with sub-gram accuracy, calculates macros and caloric nutritional density in real-time, and transmits intake telemetry to an organized MySQL database schema.
+              </p>
+
+              <div class="project-highlights">
+                <span class="highlight-item">✓ High-precision 24-bit load cell calibration</span>
+                <span class="highlight-item">✓ Instant tare & portion nutritional calculation</span>
+                <span class="highlight-item">✓ Relational MySQL dietary history logging</span>
+              </div>
+
+              <div class="tech-tags-list">
+                <span class="tech-pill">ESP32</span>
+                <span class="tech-pill">HX711 Load Cell</span>
+                <span class="tech-pill">Programming</span>
+                <span class="tech-pill">Sensor Integration</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">Telemetry</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Placeholder 1: Ongoing IoT Project -->
+          <article class="project-card placeholder-card" data-category="upcoming iot">
+            <div class="project-card-header">
+              <div class="project-badge status-progress">
+                <span class="pulsing-small-dot"></span> In Development
+              </div>
+            </div>
+
+            <div class="project-visual-preview template-preview">
+              <div class="template-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <span class="template-label">Project Prototype #3</span>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Smart Environmental Telemetry Station</h3>
+              <p class="project-description">
+                Next-generation IoT microclimate telemetry node monitoring air quality, ambient humidity, temperature, and atmospheric pressure using ESP32 and MQTT streaming with cloud-synced MySQL storage.
+              </p>
+              <div class="tech-tags-list">
+                <span class="tech-pill">ESP32</span>
+                <span class="tech-pill">BME280 Sensor</span>
+                <span class="tech-pill">MQTT</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">Python</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Placeholder 2: Ongoing Software Project -->
+          <article class="project-card placeholder-card" data-category="upcoming database">
+            <div class="project-card-header">
+              <div class="project-badge status-planned">
+                <span class="badge-icon">⚡</span> In Planning
+              </div>
+            </div>
+
+            <div class="project-visual-preview template-preview">
+              <div class="template-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <span class="template-label">Project Template #4</span>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Centralized Inventory & Hardware Manager</h3>
+              <p class="project-description">
+                A desktop-to-web inventory management system engineered in C# and .NET with full relational schema design in MySQL, barcode scanning integration, and automated low-stock dispatch alerts.
+              </p>
+              <div class="tech-tags-list">
+                <span class="tech-pill">C#</span>
+                <span class="tech-pill">.NET Core</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">REST API</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">Get In Touch</span>
+          <h2 class="section-title">Let's Build Something Together</h2>
+          <p class="section-subtitle">
+            Whether you have an embedded systems concept, a software engineering role, or a technical inquiry, my inbox is always open.
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Form -->
+          <div class="contact-card form-card">
+            <h3 class="contact-card-title">Send a Message</h3>
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Alex Morgan" required>
+                <span class="form-error-msg" id="nameError">Please enter your name</span>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="alex@company.com" required>
+                <span class="form-error-msg" id="emailError">Please enter a valid email address</span>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Inquiry / Job Opportunity" required>
+                <span class="form-error-msg" id="subjectError">Please provide a subject</span>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Hello! I would love to discuss a project..." required></textarea>
+                <span class="form-error-msg" id="messageError">Please type your message</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+                <span class="btn-text">Send Message</span>
+                <svg class="send-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <div id="formSuccessAlert" class="form-alert success-alert" role="alert" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Thank you! Your message has been prepared. I will get back to you shortly.</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact Details & Social Handles -->
+          <div class="contact-card info-card">
+            <h3 class="contact-card-title">Direct Contact & Profiles</h3>
+            <p class="contact-info-desc">
+              Feel free to reach out directly via email or connect with me on professional platforms.
+            </p>
+
+            <div class="contact-info-list">
+              <!-- Email Item with Copy Action -->
+              <div class="contact-info-item">
+                <div class="info-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">Direct Email</span>
+                  <a href="mailto:developer.contact@domain.com" class="info-value" id="emailAddress">developer.contact@domain.com</a>
+                </div>
+                <button id="copyEmailBtn" class="copy-btn" aria-label="Copy email address" title="Copy to clipboard">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span class="copy-text">Copy</span>
+                </button>
+              </div>
+
+              <!-- Location / Work Preference -->
+              <div class="contact-info-item">
+                <div class="info-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">Availability</span>
+                  <span class="info-value">Open to Remote & On-Site Roles</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Handles List -->
+            <div class="social-handles-wrap">
+              <h4 class="handles-title">Professional Networks</h4>
+              <div class="social-handles-grid">
+                <!-- GitHub Handle -->
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-handle-card">
+                  <div class="handle-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                  </div>
+                  <div class="handle-info">
+                    <span class="handle-name">GitHub</span>
+                    <span class="handle-sub">Repositories & Projects</span>
+                  </div>
+                  <span class="external-arrow">↗</span>
+                </a>
+
+                <!-- LinkedIn Handle -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-handle-card">
+                  <div class="handle-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </div>
+                  <div class="handle-info">
+                    <span class="handle-name">LinkedIn</span>
+                    <span class="handle-sub">Professional Network</span>
+                  </div>
+                  <span class="external-arrow">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="section-container footer-content">
+      <div class="footer-brand">
+        <a href="#hero" class="brand-logo footer-logo">
+          <span class="logo-symbol">&lt;</span>
+          <span class="logo-text">Dev<span class="accent-dot">.</span>portfolio</span>
+          <span class="logo-symbol">/&gt;</span>
+        </a>
+        <p class="footer-tagline">Crafting reliable software and hardware systems with precision.</p>
+      </div>
+
+      <div class="footer-meta">
+        <p class="copyright-text">
+          &copy; <span id="currentYear">2026</span> Developer Portfolio. Ready for GitHub Pages deployment.
+        </p>
+        <div class="footer-badge">
+          <span>Pure Vanilla Stack • 100% Responsive</span>
+        </div>
+      </div>
+
+      <!-- Back To Top Button -->
+      <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top of page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
