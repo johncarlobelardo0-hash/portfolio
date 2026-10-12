@@ -452,10 +452,10 @@ img, svg {
 }
 
 .hero-title {
-  font-size: 3.25rem;
+  font-size: clamp(2.1rem, 3.8vw, 3rem);
   font-weight: 800;
   color: var(--text-main);
-  line-height: 1.15;
+  line-height: 1.25;
   letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
 }
