@@ -14,7 +14,7 @@
   <meta property="og:type" content="website">
 
   <!-- Favicon (SVG Monogram) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%237C3AED'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='48' font-weight='bold' fill='white'>&lt;/&gt;</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%238F294E'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='48' font-weight='bold' fill='white'>&lt;/&gt;</text></svg>">
 
   <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@
     <div class="nav-container">
       <a href="#hero" class="brand-logo" aria-label="Home">
         <span class="logo-symbol">&lt;</span>
-        <span class="logo-text">Dev<span class="accent-dot">.</span>portfolio</span>
+        <span class="logo-text">JCB<span class="accent-dot">.</span>dev</span>
         <span class="logo-symbol">/&gt;</span>
       </a>
 
@@ -90,7 +90,15 @@
   <main>
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
+      <!-- Doflamingo Anime Artwork Backdrop -->
+      <div class="hero-doflamingo-bg" aria-hidden="true">
+        <img src="./assets/doflamingo-bg.jpg" alt="" class="doflamingo-img" loading="eager">
+        <div class="doflamingo-overlay"></div>
+        <div class="doflamingo-fade-bottom"></div>
+      </div>
+
       <div class="section-container hero-grid">
+        <!-- Left: Introduction & CTAs -->
         <div class="hero-content">
           <!-- Availability Badge -->
           <div class="badge-pill">
@@ -99,23 +107,31 @@
           </div>
 
           <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">John Carlo Belardo</span>, a 21-year-old <span class="violet-highlight">Computer Engineering Student</span>.
+            Hi, I'm <span class="gradient-text">John Carlo Belardo</span>
           </h1>
 
+          <div class="hero-role-headline">
+            <span class="role-badge">Computer Engineering Student</span>
+            <span class="role-separator">|</span>
+            <span class="role-badge">Software Developer</span>
+            <span class="role-separator">|</span>
+            <span class="role-badge">IoT Enthusiast</span>
+          </div>
+
           <p class="hero-bio">
-            Bridging hardware, firmware, and scalable software. I design robust embedded solutions with ESP32 microcontrollers and build reliable multi-tier software applications powered by modern languages and structured databases.
+            Driven by a strong interest in programming, embedded systems, IoT microcontrollers (like ESP32), and hardware-software integration. I design responsive web frontends, build structured relational database pipelines in MySQL, and craft reliable software systems.
           </p>
 
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">
-              <span>View Work</span>
+              <span>View My Projects</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
             <a href="#contact" class="btn btn-secondary">
-              <span>Get in Touch</span>
+              <span>Contact Me</span>
             </a>
           </div>
 
@@ -143,41 +159,32 @@
           </div>
         </div>
 
-        <!-- Hero Visual: Modern Developer Code Card (abusaid.netlify.app inspired) -->
+        <!-- Right: Custom Anime-Style Portrait -->
         <div class="hero-visual">
-          <div class="code-terminal-card">
-            <div class="terminal-header">
-              <div class="terminal-dots">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
+          <div class="hero-portrait-wrapper">
+            <div class="portrait-glow-aura" aria-hidden="true"></div>
+            <div class="portrait-rotating-ring" aria-hidden="true"></div>
+
+            <!-- Decorative Floating Particles -->
+            <div class="portrait-particle p-1" aria-hidden="true"></div>
+            <div class="portrait-particle p-2" aria-hidden="true"></div>
+            <div class="portrait-particle p-3" aria-hidden="true"></div>
+            <div class="portrait-particle p-4" aria-hidden="true"></div>
+
+            <!-- Softly Rounded Portrait Frame with Glow -->
+            <div class="portrait-frame">
+              <img 
+                src="./assets/anime-portrait.jpg" 
+                alt="John Carlo Belardo - Anime Style Portrait" 
+                class="portrait-img" 
+                width="450" 
+                height="450" 
+                loading="eager"
+              >
+              <div class="portrait-badge">
+                <span class="sparkle-icon">✦</span>
+                <span>John Carlo Belardo</span>
               </div>
-              <div class="terminal-title">developer.config.ts</div>
-              <div class="terminal-badge">Active</div>
-            </div>
-            <div class="terminal-body">
-              <pre><code><span class="token-keyword">const</span> <span class="token-variable">developer</span> = {
-  <span class="token-property">name</span>: <span class="token-string">"John Carlo Belardo"</span>,
-  <span class="token-property">age</span>: <span class="token-number">21</span>,
-  <span class="token-property">education</span>: <span class="token-string">"Computer Engineering"</span>,
-  <span class="token-property">specialization</span>: [
-    <span class="token-string">"ESP32 & Sensor Architectures"</span>,
-    <span class="token-string">"Full-Stack Software Engineering"</span>,
-    <span class="token-string">"Relational Database Systems (MySQL)"</span>
-  ],
-  <span class="token-property">coreLanguages</span>: [
-    <span class="token-string">"C#"</span>, <span class="token-string">"C++"</span>, <span class="token-string">"Java"</span>, <span class="token-string">"Python"</span>, <span class="token-string">"JS"</span>
-  ],
-  <span class="token-property">aiAccelerated</span>: <span class="token-boolean">true</span>,
-  <span class="token-property">status</span>: <span class="token-string">"Ready to build impactful solutions"</span>,
-  <span class="token-function">craftCode</span>: () =&gt; {
-    <span class="token-keyword">return</span> <span class="token-string">"High-performance & reliable systems"</span>;
-  }
-};</code></pre>
-            </div>
-            <div class="terminal-footer">
-              <span class="status-indicator"></span>
-              <span class="terminal-status-text">ESLint: Passed • TypeScript: v5.4 • Git: clean</span>
             </div>
           </div>
         </div>
@@ -230,6 +237,46 @@
               <div class="stat-number">&infin;</div>
               <div class="stat-label">Commitment to Quality</div>
               <p class="stat-desc">Clean code, robust documentation, and reliable systems.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer Config Terminal Card (Integrated into About Me) -->
+        <div class="about-terminal-wrap">
+          <div class="code-terminal-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="terminal-title">developer.config.ts</div>
+              <div class="terminal-badge">Active</div>
+            </div>
+            <div class="terminal-body">
+              <pre><code><span class="token-keyword">const</span> <span class="token-variable">developer</span> = {
+  <span class="token-property">name</span>: <span class="token-string">"John Carlo Belardo"</span>,
+  <span class="token-property">age</span>: <span class="token-number">21</span>,
+  <span class="token-property">role</span>: <span class="token-string">"Computer Engineering Student"</span>,
+  <span class="token-property">focusAreas</span>: [
+    <span class="token-string">"ESP32 & Sensor Architectures"</span>,
+    <span class="token-string">"Embedded Firmware & IoT Systems"</span>,
+    <span class="token-string">"Relational Database Systems (MySQL)"</span>
+  ],
+  <span class="token-property">coreLanguages</span>: [
+    <span class="token-string">"C#"</span>, <span class="token-string">"C++"</span>, <span class="token-string">"Java"</span>, <span class="token-string">"Python"</span>, <span class="token-string">"JavaScript"</span>
+  ],
+  <span class="token-property">primaryIDE</span>: <span class="token-string">"Visual Studio Code"</span>,
+  <span class="token-property">aiAccelerated</span>: <span class="token-boolean">true</span>,
+  <span class="token-property">status</span>: <span class="token-string">"Building innovative hardware-software solutions"</span>,
+  <span class="token-function">craftCode</span>: () =&gt; {
+    <span class="token-keyword">return</span> <span class="token-string">"High-performance & reliable systems"</span>;
+  }
+};</code></pre>
+            </div>
+            <div class="terminal-footer">
+              <span class="status-indicator"></span>
+              <span class="terminal-status-text">TypeScript: v5.4 • Architecture: Clean & Modular • Git: Main</span>
             </div>
           </div>
         </div>
@@ -837,7 +884,7 @@
       <div class="footer-brand">
         <a href="#hero" class="brand-logo footer-logo">
           <span class="logo-symbol">&lt;</span>
-          <span class="logo-text">Dev<span class="accent-dot">.</span>portfolio</span>
+          <span class="logo-text">JCB<span class="accent-dot">.</span>dev</span>
           <span class="logo-symbol">/&gt;</span>
         </a>
         <p class="footer-tagline">Crafting reliable software and hardware systems with precision.</p>
