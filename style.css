@@ -5,6 +5,17 @@
             Pure White (#FFFFFF), Dark Text (#29232A)
    ========================================================================== */
 
+/* --- One Piece Custom Display Font --- */
+@font-face {
+  font-family: 'One Piece';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local('One Piece'),
+       url('assets/fonts/one-piece.woff') format('woff'),
+       url('https://fonts.cdnfonts.com/s/22829/One Piece - PERSONAL USE.woff') format('woff');
+}
+
 /* --- Design Tokens & CSS Variables --- */
 :root {
   /* Core Pink & White Palette */
@@ -69,6 +80,7 @@
 
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-code: 'JetBrains Mono', Consolas, Monaco, monospace;
+  --font-heading: 'One Piece', 'Pirata One', 'Times New Roman', Georgia, serif;
 
   --container-max: 1200px;
   --nav-height: 72px;
@@ -142,6 +154,12 @@ img, svg {
   vertical-align: middle;
 }
 
+/* --- Global Headings with One Piece Style Font --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.035em;
+}
+
 /* --- Ambient Glow Accents --- */
 .ambient-glow {
   position: absolute;
@@ -194,7 +212,8 @@ img, svg {
 
 .section-kicker {
   display: inline-block;
-  font-size: 0.8125rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -207,10 +226,11 @@ img, svg {
 }
 
 .section-title {
-  font-size: 2.25rem;
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-size: 2.35rem;
+  font-weight: 700;
   color: var(--text-main);
-  letter-spacing: -0.025em;
+  letter-spacing: 0.03em;
   line-height: 1.25;
   margin-bottom: 1rem;
 }
@@ -258,13 +278,13 @@ img, svg {
 }
 
 .brand-logo {
-  font-family: var(--font-code);
-  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--text-main);
   display: inline-flex;
   align-items: center;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
 }
 
 .logo-symbol {
@@ -550,11 +570,12 @@ img, svg {
 }
 
 .hero-title {
-  font-size: clamp(2.35rem, 4.2vw, 3.4rem);
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+  font-weight: 700;
   color: var(--text-main);
-  line-height: 1.18;
-  letter-spacing: -0.03em;
+  line-height: 1.22;
+  letter-spacing: 0.03em;
   margin-bottom: 0.9rem;
 }
 
@@ -571,15 +592,16 @@ img, svg {
 }
 
 .hero-role-headline {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
   color: var(--dark-rose);
   margin-bottom: 1.4rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  font-family: var(--font-code);
+  letter-spacing: 0.04em;
 }
 
 [data-theme="dark"] .hero-role-headline {
@@ -822,6 +844,7 @@ img, svg {
 }
 
 .portrait-badge {
+  font-family: var(--font-heading);
   position: absolute;
   bottom: 16px;
   left: 50%;
@@ -831,8 +854,9 @@ img, svg {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(233, 160, 183, 0.5);
   color: #F8E8EF;
-  font-size: 0.825rem;
+  font-size: 0.925rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
   padding: 6px 18px;
   border-radius: var(--radius-full);
   display: inline-flex;
@@ -938,9 +962,11 @@ img, svg {
 }
 
 .about-card-title {
-  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-main);
+  letter-spacing: 0.03em;
   margin-bottom: 1rem;
 }
 
@@ -979,12 +1005,13 @@ img, svg {
 }
 
 .stat-number {
-  font-size: 2.25rem;
-  font-weight: 800;
+  font-size: 2.35rem;
+  font-weight: 700;
   color: var(--dark-rose);
   line-height: 1;
   margin-bottom: 0.5rem;
-  font-family: var(--font-code);
+  font-family: var(--font-heading);
+  letter-spacing: 0.03em;
 }
 
 [data-theme="dark"] .stat-number {
@@ -992,9 +1019,11 @@ img, svg {
 }
 
 .stat-label {
-  font-size: 0.95rem;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-main);
+  letter-spacing: 0.03em;
   margin-bottom: 0.25rem;
 }
 
@@ -1046,9 +1075,10 @@ img, svg {
 .dot-green { background-color: #10B981; }
 
 .terminal-title {
+  font-family: var(--font-heading);
   color: #BBA7B6;
-  font-size: 0.775rem;
-  letter-spacing: 0.04em;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
 }
 
 .terminal-badge {
@@ -1117,12 +1147,14 @@ img, svg {
 }
 
 .subsection-title {
-  font-size: 1.35rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-main);
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  letter-spacing: 0.03em;
 }
 
 .subsection-icon {
@@ -1196,9 +1228,11 @@ img, svg {
 }
 
 .lang-name {
-  font-size: 1.05rem;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-main);
+  letter-spacing: 0.03em;
   margin-bottom: 0.15rem;
 }
 
@@ -1263,7 +1297,8 @@ img, svg {
 }
 
 .ide-badge {
-  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1272,9 +1307,11 @@ img, svg {
 }
 
 .ide-name {
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 700;
   color: var(--text-main);
+  letter-spacing: 0.03em;
   margin-bottom: 0.25rem;
 }
 
@@ -1405,9 +1442,11 @@ img, svg {
 }
 
 .ai-tool-name {
-  font-size: 1.05rem;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-main);
+  letter-spacing: 0.03em;
   margin-bottom: 0.25rem;
 }
 
@@ -1444,7 +1483,10 @@ img, svg {
 }
 
 .tooltip-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
   font-weight: 700;
+  letter-spacing: 0.03em;
   color: var(--rose-pink);
   display: block;
   margin-bottom: 3px;
@@ -1681,9 +1723,11 @@ img, svg {
 }
 
 .project-title {
-  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--text-main);
+  letter-spacing: 0.03em;
   margin-bottom: 0.75rem;
   line-height: 1.35;
 }
@@ -1750,9 +1794,11 @@ img, svg {
 }
 
 .contact-card-title {
-  font-size: 1.35rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-main);
+  letter-spacing: 0.03em;
   margin-bottom: 1.25rem;
 }
 
@@ -1924,7 +1970,8 @@ img, svg {
 }
 
 .handles-title {
-  font-size: 0.9rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -2021,7 +2068,9 @@ img, svg {
 }
 
 .footer-logo {
-  font-size: 1.15rem;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
 }
 
 .footer-tagline {
