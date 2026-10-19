@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initClipboardCopy();
   initScrollSpy();
   updateCopyrightYear();
+  initMusicPlayer();
 });
 
 /* ==========================================================================
@@ -220,6 +221,7 @@ function initContactForm() {
   const form = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
   const successAlert = document.getElementById('formSuccessAlert');
+  const errorAlert = document.getElementById('formErrorAlert');
 
   if (!form) return;
 
@@ -255,7 +257,7 @@ function initContactForm() {
     }
   });
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     let isFormValid = true;
 
@@ -279,31 +281,54 @@ function initContactForm() {
       return;
     }
 
+    // Hide any existing alerts
+    if (successAlert) successAlert.style.display = 'none';
+    if (errorAlert) errorAlert.style.display = 'none';
+
     // Interactive button loading state
     if (submitBtn) {
       const originalText = submitBtn.querySelector('.btn-text').textContent;
       submitBtn.disabled = true;
       submitBtn.querySelector('.btn-text').textContent = 'Sending...';
 
-      setTimeout(() => {
-        // Show success alert
-        if (successAlert) {
-          successAlert.style.display = 'flex';
-          successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action || 'https://formspree.io/f/xzedwwvj', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
 
-        // Reset form inputs
-        form.reset();
+        if (response.ok) {
+          // Success
+          if (successAlert) {
+            successAlert.style.display = 'flex';
+            successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+          form.reset();
+
+          // Auto-hide alert after 7 seconds
+          setTimeout(() => {
+            if (successAlert) {
+              successAlert.style.display = 'none';
+            }
+          }, 7000);
+        } else {
+          const data = await response.json().catch(() => ({}));
+          throw new Error(data.error || 'Server rejected submission');
+        }
+      } catch (err) {
+        console.error('Form submission failed:', err);
+        if (errorAlert) {
+          errorAlert.style.display = 'flex';
+          errorAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      } finally {
         submitBtn.disabled = false;
         submitBtn.querySelector('.btn-text').textContent = originalText;
-
-        // Auto hide success alert after 6 seconds
-        setTimeout(() => {
-          if (successAlert) {
-            successAlert.style.display = 'none';
-          }
-        }, 6000);
-      }, 700);
+      }
     }
   });
 }
@@ -403,4 +428,127 @@ function updateCopyrightYear() {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+}
+
+/* ==========================================================================
+   9. Mini Music Player — No Pole by Don Toliver
+   ========================================================================== */
+function initMusicPlayer() {
+  const audio      = document.getElementById('bgMusic');
+  const player     = document.getElementById('musicPlayer');
+  const playBtn    = document.getElementById('musicPlayBtn');
+  const muteBtn    = document.getElementById('musicMuteBtn');
+  const collapseBtn = document.getElementById('musicCollapseBtn');
+  const progressFill = document.getElementById('musicProgressFill');
+  const progressBar  = document.getElementById('musicProgressBar');
+
+  if (!audio || !player) return;
+
+  // ── Icons ────────────────────────────────────────────────────────────────
+  const iconPlay   = playBtn.querySelector('.icon-play');
+  const iconPause  = playBtn.querySelector('.icon-pause');
+  const iconVol    = muteBtn.querySelector('.icon-volume');
+  const iconMuted  = muteBtn.querySelector('.icon-muted');
+
+  // Restore volume from localStorage
+  const savedVol  = parseFloat(localStorage.getItem('musicVolume'));
+  const savedMute = localStorage.getItem('musicMuted') === 'true';
+  audio.volume    = isNaN(savedVol) ? 0.35 : savedVol;
+  if (savedMute) { audio.muted = true; syncMuteIcons(true); }
+
+  // ── Play / Pause ─────────────────────────────────────────────────────────
+  function setPlayState(playing) {
+    if (playing) {
+      audio.play().catch(() => {});
+      player.classList.add('playing');
+      iconPlay.style.display  = 'none';
+      iconPause.style.display = '';
+      playBtn.setAttribute('aria-label', 'Pause background music');
+    } else {
+      audio.pause();
+      player.classList.remove('playing');
+      iconPlay.style.display  = '';
+      iconPause.style.display = 'none';
+      playBtn.setAttribute('aria-label', 'Play background music');
+    }
+  }
+
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      setPlayState(true);
+    } else {
+      setPlayState(false);
+    }
+  });
+
+  // ── Mute / Unmute ────────────────────────────────────────────────────────
+  function syncMuteIcons(muted) {
+    iconVol.style.display   = muted ? 'none' : '';
+    iconMuted.style.display = muted ? '' : 'none';
+    muteBtn.setAttribute('aria-label', muted ? 'Unmute background music' : 'Mute background music');
+  }
+
+  muteBtn.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+    syncMuteIcons(audio.muted);
+    localStorage.setItem('musicMuted', audio.muted);
+  });
+
+  // ── Progress bar (display + seek) ────────────────────────────────────────
+  audio.addEventListener('timeupdate', () => {
+    if (!audio.duration) return;
+    const pct = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = pct + '%';
+  });
+
+  progressBar.addEventListener('click', (e) => {
+    if (!audio.duration) return;
+    const rect = progressBar.getBoundingClientRect();
+    const pct  = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    audio.currentTime = pct * audio.duration;
+  });
+
+  // ── Collapse / Expand ────────────────────────────────────────────────────
+  let isCollapsed = localStorage.getItem('musicCollapsed') === 'true';
+
+  function applyCollapse(collapsed) {
+    player.classList.toggle('collapsed', collapsed);
+    collapseBtn.setAttribute(
+      'aria-label',
+      collapsed ? 'Expand player' : 'Collapse player'
+    );
+    collapseBtn.setAttribute('title', collapsed ? 'Expand' : 'Minimize');
+  }
+
+  applyCollapse(isCollapsed);
+
+  collapseBtn.addEventListener('click', () => {
+    isCollapsed = !isCollapsed;
+    applyCollapse(isCollapsed);
+    localStorage.setItem('musicCollapsed', isCollapsed);
+  });
+
+  // Re-expand automatically when user clicks collapsed cover to play
+  const cover = document.getElementById('musicCover');
+  if (cover) {
+    cover.style.cursor = 'pointer';
+    cover.addEventListener('click', () => {
+      if (isCollapsed) {
+        isCollapsed = false;
+        applyCollapse(false);
+        localStorage.setItem('musicCollapsed', false);
+      }
+      if (audio.paused) setPlayState(true);
+      else setPlayState(false);
+    });
+  }
+
+  // ── Keyboard shortcut: Space-bar on player ────────────────────────────────
+  player.addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      if (audio.paused) setPlayState(true);
+      else setPlayState(false);
+    }
+  });
 }
